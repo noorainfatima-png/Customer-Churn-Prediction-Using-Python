@@ -1,18 +1,58 @@
-Header & Overview: Title labeled Customer Churn Prediction, describing an end-to-end data analytics pipeline developed during an internship at YuvaIntern to predict customer attrition and design retention strategies.
+# Customer Churn Prediction & Analytics Pipeline
 
-Project Objectives: Focuses on identifying key indicators driving churn, preprocessing/cleaning behavioral, demographic, and financial data, and delivering actionable business strategies.
+**An end-to-end machine learning project to identify, analyze, and predict customer churn using Python, data engineering best practices, and advanced classification modeling.**
 
+---
 
+## Project Overview
 
-Tech Stack:
+Customer churn directly impacts long-term Customer Lifetime Value (CLV). This project delivers a comprehensive, multi-week data science framework—moving from strategic planning and technical data engineering to predictive modeling and deployment strategy. By leveraging the **IBM Telco Customer Churn** and **UCI Online Retail** datasets, this pipeline translates raw transactional and customer profile data into actionable business intelligence for retention strategies.
 
-Language: Python
+---
 
-Libraries: Pandas, NumPy, Matplotlib, Seaborn
+## Repository Navigation
 
-Environment: Jupyter Notebook
+* **Week 1:** Strategic Planning & Business Objectives Framework
+* **Week 2:** Data Acquisition, Validation, Cleaning & Feature Preprocessing Strategy
+* **Week 3:** Exploratory Data Analysis (EDA) & Feature Correlation Analysis
+* **Week 4:** Predictive Analytics Modeling Strategy, Hyperparameter Tuning & Deployment
 
+---
 
-Repository Structure: Lists /Notebooks (cleaning, preprocessing, EDA) and /Documentation (strategic blueprints and reports).
+## Key Technical Modules
 
-Key Steps Taken: Highlights exploratory data analysis on contract types, data cleaning (handling missing values and class imbalances), and a risk matrix strategy to segment high-value customers at risk.
+* **Data Engineering Pipeline:** Ingestion, whitespace-to-null conversion, numerical type coercion (`TotalCharges`), median imputation, and de-duplication.
+* **Feature Engineering & Transformation:** Multi-class One-Hot Encoding (`get_dummies`), binary encoding, and zero-mean feature standardization using `StandardScaler`.
+* **Validation & Splitting:** Stratified 80/20 train-test partitioning alongside $k$-fold cross-validation to maintain target balance and prevent data leakage.
+* **Predictive Modeling:** Multi-stage evaluation progressing from interpretable baselines (**Logistic Regression**) to non-linear trees (**Decision Trees**) and production-grade ensembles (**Random Forest**, **Gradient Boosting**).
+* **Metrics Strategy:** Metric optimization prioritized around **Recall** and **F1-Score** over accuracy to minimize costly false negatives.
+
+---
+
+## Core Dataset At a Glance
+
+| Dataset Attribute | Value / Description |
+| --- | --- |
+| **Primary Source** | IBM Telco Customer Churn (via Kaggle) |
+| **Dataset Size** | 7,043 Customer Records $\times$ 21 Features |
+| **Target Label** | `Churn` (`No`: 5,174 / 73.4% | `Yes`: 1,869 / 26.6%) |
+| **Feature Types** | Categorical (Services, Contract), Numeric (`tenure`, `MonthlyCharges`), Binary |
+
+---
+
+## Project Workflow Architecture
+
+```text
+[ Data Ingestion & Hygiene ] ➡️ [ Systematic Validation & Cleaning ] ➡️ [ Encoding & Feature Scaling ]
+                                                                                   │
+[ Retention Strategy ] ⬅️ [ Model Evaluation (Recall/F1) ] ⬅️ [ Stratified Cross-Validation ]
+
+```
+
+---
+
+## Tech Stack & Dependencies
+
+* **Language:** Python 
+* **Data Processing:** Pandas, NumPy
+* **Machine Learning:** Scikit-learn (Preprocessing, Model Selection, Metrics)
